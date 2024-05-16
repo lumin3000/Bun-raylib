@@ -1,0 +1,15 @@
+.{
+    .name = "raylib-zig",
+    .version = "0.1.1",
+    .dependencies = .{
+        .raylib = .{
+            .url = "https://github.com/raysan5/raylib/archive/e47ebec66134800e734710038ea4e5f070f3ef06.tar.gz",
+            .hash = "12208edb6d35c0aa5f57262014b02392c6ccfd0685a8eff1d961b42a612d3418fa89",
+        },
+        .@"raylib-zig" = .{
+            .url = "https://github.com/Not-Nik/raylib-zig/archive/devel.tar.gz",
+            .hash = "1220f48ef45b22a393da16f3210b61b87ad9b65d215d02c51189861a57a1b4290059", // put the actual hash here
+        },
+    },
+    .paths = .{""},
+}
