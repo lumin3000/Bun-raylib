@@ -6,6 +6,7 @@ This project utilises Bun FFI in conjunction with raylib-zig to employ the rayli
 How to start:
 ```
 git submodule update --init --recursive
+cp ./buildHelper/build.zig ./raylib-zig
 zig build
 bun ./index.js
 ```
