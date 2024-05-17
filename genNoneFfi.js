@@ -1,6 +1,5 @@
 import { readFileSync, writeFileSync } from 'fs';
 
-// 读取 Zig 文件内容
 function readZigFile(filePath) {
   const content = readFileSync(filePath, 'utf8');
   const lines = content.split('\n');
@@ -16,13 +15,11 @@ function readZigFile(filePath) {
   return functionNames;
 }
 
-// 读取 JSON 文件内容
 function readJsonFile(filePath) {
   const jsonContent = readFileSync(filePath, 'utf8');
   return JSON.parse(jsonContent);
 }
 
-// 比较函数名称并生成新的 JSON 文件
 function compareAndGenerateNoneffi(zigFunctions, ffiJson, outputFilePath) {
   const noneffi = {};
 
@@ -35,7 +32,6 @@ function compareAndGenerateNoneffi(zigFunctions, ffiJson, outputFilePath) {
   writeFileSync(outputFilePath, JSON.stringify(noneffi, null, 2));
 }
 
-// 主函数
 function main() {
   const zigFilePath = './raylib-zig/lib/raylib-ext.zig';
   const ffiJsonFilePath = './ffi.json';

@@ -72,24 +72,9 @@ export const BLANK = rgb(0, 0, 0, 0); // Blank (Transparent)
 export const MAGENTA = rgb(255, 0, 255, 255); // Magenta
 export const RAYWHITE = rgb(245, 245, 245, 255); // My own White (raylib logo)
 
-//console.log(rl +Object.keys(rl).length);
 
-// 读取图像并获取尺寸
 const imagePath = "assets/raylib_logo.png";
 const imageData = fs.readFileSync(imagePath);
-// const info = await sharp(imageData).metadata();
-// const { data, info: { width, height } } = await sharp(imageData)
-// .raw()
-// .toBuffer({ resolveWithObject: true });
-
-// // 创建raylib的Image对象
-// let image = {
-// data,
-// width,
-// height,
-// mipmaps: 1,
-// format: 7  // RAYLIB支持的格式，7 通常对应 RGBA 32bit
-// };
 
 const screenWidth = 800;
 const screenHeight = 450;
@@ -100,23 +85,14 @@ rl.InitWindow(
 	cstr("raylib [js] example - project folder"),
 );
 
-//const imagePtr = rl.LoadImageFromMemory(cstr('png'),imageData.buffer, imageData.length);
-//console.log(imagePtr);
-//const logo = rl.LoadTextureFromImage(imagePtr);
-//rl.UploadImage(logo);
-//const logo = rl.LoadImage(cstr("assets/raylib_logo.png"));
-
 let app = () => {
-	// const logo = rl.LoadTexture(cstr("assets/raylib_logo.png"));
     rl.beforeUpdate();
 	console.log(`beforeUpdated`);
 	rl.SetTargetFPS(60);
 	while (!rl.WindowShouldClose()) {
-		//const offset = Math.sin(getTime())*50
 		rl.BeginDrawing();
 		rl.ClearBackground(RAYWHITE);
 		rl.update();
-		//rl.DrawTexture(logo, (screenWidth/2) - (logo.width/2), (screenHeight/2) - (logo.height/2) + offset, WHITE)
 		rl.DrawText(
 			cstr("This is an example for loading a folder!"),
 			190,
@@ -127,7 +103,6 @@ let app = () => {
 		rl.DrawFPS(10, 10);
 		rl.EndDrawing();
 	}
-	// rl.UnloadTexture(logo);
 	rl.beforeClose();
 	rl.CloseWindow();
 };
